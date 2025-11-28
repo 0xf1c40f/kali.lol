@@ -882,7 +882,7 @@ function Chloex:Window(GuiConfig)
         ScreenGui.Name = "ToggleUIButton"
         
         local Button = Instance.new("TextButton")
-        Button.Parent = MainButton
+        Button.Parent = ScreenGui
         Button.Size = UDim2.new(0, 40, 0, 40)
         Button.BackgroundTransparency = 0
         Button.BorderSizePixel = 0
