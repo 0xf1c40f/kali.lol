@@ -260,8 +260,8 @@ function CircleClick(Button, X, Y)
     end)
 end
 
-local Chloex = {}
-function Chloex:MakeNotify(NotifyConfig)
+local Gui = {}
+function Gui:MakeNotify(NotifyConfig)
     local NotifyConfig = NotifyConfig or {}
     NotifyConfig.Title = NotifyConfig.Title or "kali.lol"
     NotifyConfig.Description = NotifyConfig.Description or "Notification"
@@ -459,8 +459,8 @@ function Chloex:MakeNotify(NotifyConfig)
     return NotifyFunction
 end
 
-function chloex(msg, delay, color, title, desc)
-    return Chloex:MakeNotify({
+function Notify(msg, delay, color, title, desc)
+    return Gui:MakeNotify({
         Title = title or "kali.lol",
         Description = desc or "Notification",
         Content = msg or "Content",
@@ -469,7 +469,7 @@ function chloex(msg, delay, color, title, desc)
     })
 end
 
-function Chloex:Window(GuiConfig)
+function Gui:Window(GuiConfig)
     GuiConfig              = GuiConfig or {}
     GuiConfig.Title        = GuiConfig.Title or "kali.lol"
     GuiConfig.Footer       = GuiConfig.Footer or "Chloee :3"
@@ -2720,4 +2720,4 @@ end
     return Tabs
 end
 
-return Chloex
+return Gui
