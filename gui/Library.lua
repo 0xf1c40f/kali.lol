@@ -887,6 +887,7 @@ function Chloex:Window(GuiConfig)
         Button.BackgroundTransparency = 0
         Button.BorderSizePixel = 0
         Button.Position = UDim2.new(0, 20, 0, 100)
+        Button.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
         Button.Text = "+"
         
         local UICorner = Instance.new("UICorner")
@@ -904,7 +905,7 @@ function Chloex:Window(GuiConfig)
 
         local function update(input)
             local delta = input.Position - dragStart
-            MainButton.Position = UDim2.new(
+            Button.Position = UDim2.new(
                 startPos.X.Scale,
                 startPos.X.Offset + delta.X,
                 startPos.Y.Scale,
@@ -916,7 +917,7 @@ function Chloex:Window(GuiConfig)
             if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
                 dragging = true
                 dragStart = input.Position
-                startPos = MainButton.Position
+                startPos = Button.Position
                 input.Changed:Connect(function()
                     if input.UserInputState == Enum.UserInputState.End then
                         dragging = false
